@@ -1,3 +1,7 @@
-show
-<%= @book.title %>
-<%= @book.body %>
+<p>show</p>
+<p><%= @book.title %></p>
+<p><%= @book.body %></p>
+
+<%= link_to "edit", edit_book_path(@book) %>
+<%= link_to "delete", book_path(@book), method: :delete %>
+<%= link_to "back", root_path %>
