@@ -10,6 +10,47 @@
   </head>
 
   <body>
+
+        <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span>Bookers</span>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li class="glyphicon glyphicon-home home">
+                <%= link_to "Home", "#" %>
+              </li>
+              <li class="glyphicon glyphicon-user users">
+                <%= link_to "Users", "#" %>
+              </li>
+              <li class="glyphicon glyphicon-book books">
+                <%= link_to "Books", "#" %>
+              </li>
+              <li class="glyphicon glyphicon-log-out logout">
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li class="glyphicon glyphicon-home home">
+                <%= link_to "Home", root_path %>
+              </li>
+              <li class="glyphicon glyphicon-link about">
+                <%= link_to "About", "#" %>
+              </li>
+              <li class="glyphicon glyphicon-edit sign_up">
+                <%= link_to "sign up", new_user_registration_path %>
+              </li>
+              <li class="glyphicon glyphicon-log-in sign_in">
+                <%= link_to "login", new_user_session_path %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>
