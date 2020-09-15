@@ -1,0 +1,10 @@
+<h1>Userinfo</h1>
+
+<div class="profile-container">
+  <h3 class="profile-name"><%= @user.name %></h3>
+  <h3 class="profile-name"><%= @user.introduction %></h3>
+</div>
+
+<% @books.each do |book| %>
+  <%= link_to book.title, book_path(book) %>
+<% end %>
