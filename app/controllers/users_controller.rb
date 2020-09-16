@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+  def profile
+  end
+
+
   private
   def user_paramas
     params.require(:user).permit(:name, :introduction, :profile_image)
