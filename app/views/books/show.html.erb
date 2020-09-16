@@ -1,12 +1,46 @@
-<p>show</p>
-<p><%= @book.title %></p>
-<p><%= @book.body %></p>
+<!--Books-->
+<div class="body">
+  <div class="container">
+    <div class="row">
 
+      <div class="col-xs-3">
+        <%= render partial: "users/profile" %>
+        <%= render partial: "books/new" %>
+      </div>
 
-<%= link_to "edit", edit_book_path(@book) %>
-
-<% if @book.user == current_user %>
-  <%= link_to "delete", book_path(@book), method: :delete %>
-<% end %>
-
-<%= link_to "back", root_path %>
+      <div class="col-xs-9">
+        <h2>Book detail</h2>
+          <table class="table table-hover table-inverse">
+            <thead>
+              <tr>
+              <th></th>
+              <th>Title</th>
+              <th>Opinion</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td>
+                  <!--同一の画像しか表示されない↓要編集-->
+                  <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+                </td>
+                <td>
+                  <%= link_to @book.title, book_path(@book) %>
+                </td>
+                <td>
+                  <%= @book.body %>
+                  <% if @book.user == current_user %>
+                    <%= link_to "edit", edit_book_path(@book) %>
+                  <% end %>
+                  <% if @book.user == current_user %>
+                    <%= link_to "delete", book_path(@book), method: :delete %>
+                  <% end %>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
