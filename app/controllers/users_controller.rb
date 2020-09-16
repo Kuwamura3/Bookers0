@@ -23,6 +23,10 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def list
+    @user = User.new
+    @book = Book.find(params[:id])
+  end
 
   private
   def user_paramas

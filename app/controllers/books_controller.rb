@@ -24,6 +24,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @user = @User.find(params[:id])
     @book = Book.new
     @books = Book.page(params[:page]).reverse_order
   end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root "books#top"
   get "home/about" => "books#about"
-  resources :books
+  get "books" => "users#list"
+  resources :books, except: [:index]
   resources :users, only: [:show, :edit, :update, :index]
 end
