@@ -14,5 +14,5 @@
     </tbody>
   </table>
   <% if @user.id == current_user.id %>
-    <p><%= link_to "Edit profile", edit_user_path(@user), class: "pull-right" %></p>
+    <%= link_to "", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
   <% end %>

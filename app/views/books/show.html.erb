@@ -4,7 +4,24 @@
     <div class="row">
 
       <div class="col-xs-3">
-        <%= render partial: "users/profile" %>
+        <h2>User info</h2>
+        <%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+        <table class="table">
+          <tbody>
+            <tr></tr>
+            <tr>
+              <th>name</th>
+              <th><%= @book.user.name %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= @book.user.introduction %></th>
+            </tr>
+          </tbody>
+        </table>
+        <% if @book.user.id == current_user.id %>
+          <%= link_to "", edit_user_path(@book.user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+        <% end %>
         <%= render partial: "books/new" %>
       </div>
 
@@ -22,21 +39,24 @@
           <tbody>
               <tr>
                 <td>
-                  <!--同一の画像しか表示されない↓要編集-->
-                  <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
                 </td>
                 <td>
                   <%= link_to @book.title, book_path(@book) %>
                 </td>
                 <td>
                   <%= @book.body %>
-                  <% if @book.user == current_user %>
-                    <%= link_to "edit", edit_book_path(@book) %>
-                  <% end %>
-                  <% if @book.user == current_user %>
-                    <%= link_to "delete", book_path(@book), method: :delete %>
-                  <% end %>
                 </td>
+                <% if @book.user == current_user %>
+                  <td>
+                    <%= link_to "edit", edit_book_path(@book), class: "btn-sm btn-success" %>
+                  </td>
+                <% end %>
+                <% if @book.user == current_user %>
+                  <td>
+                    <%= link_to "delete", book_path(@book), class: "btn-sm btn-danger", method: :delete %>
+                  </td>
+                <% end %>
               </tr>
           </tbody>
         </table>

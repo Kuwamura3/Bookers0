@@ -22,8 +22,7 @@
             <% @books.each do |book| %>
               <tr>
                 <td>
-                  <!--同一の画像しか表示されない↓要編集-->
-                  <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
+                  <%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
                 </td>
                 <td>
                   <%= link_to book.title, book_path(book) %>

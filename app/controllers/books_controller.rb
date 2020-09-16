@@ -30,8 +30,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    # 現在のユーザー(本来は投稿者、要修正)
-    @user = current_user
     @book = Book.find(params[:id])
   end
 

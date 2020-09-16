@@ -10,7 +10,7 @@
       <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "off", id:"inputPassword", placeholder:"パスワード" %>
     </div>
-    <%= f.submit "サインイン" %>
+    <%= f.submit "Log in", class: "btn btn-primary" %>
   <% end %>
 
 <%= render "devise/shared/links" %>
