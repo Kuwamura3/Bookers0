@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.new
+    # 仮置き
+    @user = current_user
     @users = User.page(params[:id]).reverse_order
   end
 
@@ -24,8 +25,10 @@ class UsersController < ApplicationController
   end
 
   def list
-    @user = User.new
-    @book = Book.find(params[:id])
+    # 仮置き
+    @user = current_user
+    @book = Book.new
+    @books = Book.all
   end
 
   private
