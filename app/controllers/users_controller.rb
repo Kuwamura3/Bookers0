@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def index
-    # 仮置き
     @user = current_user
     @users = User.page(params[:id]).reverse_order
   end
@@ -17,18 +16,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_paramas)
-    redirect_to user_path(@user.id)
+    if @user.update(user_paramas)
+      flash[:notice] = "Profile was successfully updated."
+      redirect_to user_path(@user.id)
+    else
+      render :edit
+    end
   end
 
   def profile
-  end
-
-  def list
-    # 仮置き
-    @user = current_user
-    @book = Book.new
-    @books = Book.all
   end
 
   private
