@@ -12,4 +12,8 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  def remember_me
+    true
+  end
+
 end

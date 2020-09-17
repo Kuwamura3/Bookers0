@@ -16,55 +16,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-body {
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    margin: 30px;
+.body {
+    margin-top: 50px;
 }
 
-p, ol, ul, td {
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    margin: 30px;
+header .navbar-left span {
+    font-size: 20px;
+    padding-top: 10px;
 }
 
-a {
-    color: #000000;
+.nav {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
 }
 
-a:visited {
-    color: #666666;
-}
-
-td {
-    padding-bottom: 7px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-div > input, textarea{
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-}
-
-.notice {
-    color: green;
-}
-
-.alert {
-    border:2px solid red;
-}
-
-.error_explanation {
+header {
     color: white;
-    background-color: red;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: 0;
 }
