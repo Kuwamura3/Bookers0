@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
 
   def top
-    @book = Book.new
   end
 
   def about
