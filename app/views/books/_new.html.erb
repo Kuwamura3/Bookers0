@@ -2,10 +2,10 @@
 
 <%= form_with model:@book, local:true do |f| %>
 
-  <h4>Title</h4>
+  <%= f.label :Title %>
   <%= f.text_field :title, class: "col-xs-12" %>
 
-  <h4>Opinion</h4>
+  <%= f.label :Opinion %>
   <%= f.text_area :body, class: "col-xs-12" %>
 
   <%= f.submit 'Create Book', class: "col-xs-12 btn btn-primary" %>
