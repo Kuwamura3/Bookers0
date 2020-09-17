@@ -47,3 +47,32 @@ label {
     color: green;
 }
 
+td {
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 33px;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+a:visited {
+    color: #666;
+}
+
+a {
+    color: #000;
+}
+
+#error_explanation {
+    color: red;
+}
