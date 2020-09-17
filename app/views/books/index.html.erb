@@ -1,10 +1,12 @@
 <!--Books-->
 <div class="body">
   <div class="container">
+    <% if flash[:notice] %>
+      <p class="notice"></p>
+      <p><%= flash[:notice] %></p>
+    <% end %>
     <div class="row">
-      <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
-      <% end %>
+
       <% if @book.errors.any? %>
         <div id="error_explanation">
           <h3>Following errors prohibited this book from being saved:</h3>
