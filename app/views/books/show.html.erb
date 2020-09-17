@@ -55,12 +55,12 @@
                 </td>
                 <% if @book2.user == current_user %>
                   <td>
-                    <%= link_to "edit", edit_book_path(@book2), class: "btn-sm btn-success" %>
+                    <%= link_to "Edit", edit_book_path(@book2), class: "btn-sm btn-success" %>
                   </td>
                 <% end %>
                 <% if @book2.user == current_user %>
                   <td>
-                    <%= link_to "delete", book_path(@book2), class: "btn-sm btn-danger", method: :delete %>
+                    <%= link_to "Destroy", book_path(@book2), class: "btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
                   </td>
                 <% end %>
               </tr>
