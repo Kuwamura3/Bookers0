@@ -6,7 +6,7 @@
 
       <% if @user.errors.any? %>
         <div id="error_explanation">
-          <h3>Following errors prohibited this book from being saved:</h3>
+          <h3>Following errors prohibited this profile from being saved:</h3>
           <ul>
             <% @user.errors.full_messages.each do |message| %>
               <li><%= message %></li>
